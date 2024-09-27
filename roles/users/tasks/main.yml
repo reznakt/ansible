@@ -1,0 +1,31 @@
+- name: Ensure user "reznak" exists
+  user:
+    name: reznak
+    state: present
+    group: reznak
+    groups:
+      - audio
+      - bluetooth
+      - cdrom
+      - docker
+      - floppy
+      - gamemode
+      - kvm
+      - lpadmin
+      - optical
+      - plugdev
+      - video
+      - wheel
+      - xbuilder
+    append: true
+    shell: /bin/bash
+    generate_ssh_key: true
+    ssh_key_type: ed25519
+    ssh_key_file: .ssh/id_ed25519
+    ssh_key_comment: ""
+
+- name: Disable root login
+  user:
+    name: root
+    password: "*"
+

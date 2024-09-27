@@ -1,0 +1,65 @@
+- name: Install packages
+  xbps: name={{ item }} state=present update_cache=yes
+  with_items:
+    # alternative XBPS repositories
+    - void-repo-multilib
+    - void-repo-nonfree
+    - void-repo-multilib-nonfree
+
+    # system packages
+    - socklog-void
+    - chrony
+    - pipewire
+    - wireplumber
+    - elogind
+    - polkit
+    - tlp
+    - NetworkManager
+    - dbus
+    - mesa-dri
+    - mesa-dri-32bit
+    - vulkan-loader
+    - mesa-vulkan-radeon
+    - mesa-vaapi
+    - mesa-vdpau
+    - alsa-pipewire
+    - bluez
+    - libspa-bluetooth
+    - cups
+
+    # misc
+    - bpytop
+    - curl
+    - git
+    - vim
+    - neovim
+    - lsd
+    - topgrade
+    - yadm
+    - nodejs
+
+    # python
+    - python3
+    - python3-pip
+    - python3-virtualenv
+    - python3-pipx
+
+    # fonts
+    - xorg-fonts
+    - noto-fonts-ttf
+    - noto-fonts-ttf-extra
+    - noto-fonts-emoji
+    - noto-fonts-cjk
+    - google-fonts-ttf
+    - nerd-fonts
+
+- name: Remove packages
+  xbps: name={{ item }} state=absent recurse=yes
+  with_items:
+    - pulseaudio
+
+- name: Install 'git-split-diffs' npm package
+  community.general.npm:
+    name: git-split-diffs
+    global: true
+

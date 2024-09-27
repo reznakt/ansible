@@ -1,0 +1,27 @@
+- name: Enable and start services
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+  with_items:
+    - socklog-unix
+    - nanoklogd
+    - NetworkManager
+    - dbus
+    - elogind
+    - chronyd
+    - polkitd
+    - tlp
+    - bluetoothd
+    - cupsd
+
+- name: Stop and disable services
+  service:
+    name: "{{ item }}"
+    state: stopped
+    enabled: no
+  with_items:
+    - acpid
+    - wpa_supplicant
+    - dhcpcd
+

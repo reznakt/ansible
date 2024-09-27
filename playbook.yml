@@ -1,0 +1,8 @@
+- name: Setup system
+  hosts: local
+  become: true
+  roles:
+    - packages
+    - users
+    - services
+
