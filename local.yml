@@ -1,0 +1,9 @@
+- hosts: localhost
+  become: true
+  tasks:
+  - name: Install packages
+    xbps: name={{item}} state=present
+    with_items:
+      - topgrade
+      - alacritty
+
