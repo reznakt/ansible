@@ -37,6 +37,8 @@
     - topgrade
     - yadm
     - nodejs
+    - docker
+    - docker-compose
 
     # python
     - python3
