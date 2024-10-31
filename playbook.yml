@@ -1,6 +1,7 @@
 - name: Setup system
   hosts: local
   become: true
+  gather_facts: false
   roles:
     - packages
     - users
