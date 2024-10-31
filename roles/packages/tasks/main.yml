@@ -63,3 +63,15 @@
     name: git-split-diffs
     global: true
 
+- name: Install flatpak packages
+  community.general.flatpak:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - com.discordapp.Discord
+    - com.github.tchx84.Flatseal
+    - com.saivert.pwvucontrol
+    - com.sindresorhus.Caprine
+    - io.freetubeapp.FreeTube
+    - org.signal.Signal
+
