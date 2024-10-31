@@ -57,6 +57,7 @@
   xbps: name={{ item }} state=absent recurse=yes
   with_items:
     - pulseaudio
+    - pavucontrol
 
 - name: Install 'git-split-diffs' npm package
   community.general.npm:
@@ -74,4 +75,11 @@
     - com.sindresorhus.Caprine
     - io.freetubeapp.FreeTube
     - org.signal.Signal
+
+- name: Remove flatpak packages
+  community.general.flatpak:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - io.github.spacingbat3.webcord
 
