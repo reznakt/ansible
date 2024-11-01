@@ -39,6 +39,11 @@
     - nodejs
     - docker
     - docker-compose
+    - go
+    - rust
+    - cargo
+    - ripgrep
+    - unzip
 
     # python
     - python3
