@@ -28,7 +28,7 @@
     - cups
 
     # misc
-    - bpytop
+    - btop
     - curl
     - git
     - vim
@@ -66,6 +66,7 @@
     - pulseaudio
     - pavucontrol
     - vscode
+    - bpytop
 
 - name: Install 'git-split-diffs' npm package
   community.general.npm:
