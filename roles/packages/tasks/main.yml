@@ -67,7 +67,6 @@
     - pavucontrol
     - vscode
     - bpytop
-    - firefox
 
 - name: Install 'git-split-diffs' npm package
   community.general.npm:
@@ -85,7 +84,6 @@
     - com.sindresorhus.Caprine
     - io.freetubeapp.FreeTube
     - org.signal.Signal
-    - io.gitlab.librewolf-community
 
 - name: Remove flatpak packages
   community.general.flatpak:
