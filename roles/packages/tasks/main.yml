@@ -67,6 +67,7 @@
     - pavucontrol
     - vscode
     - bpytop
+    - nautilus
 
 - name: Install 'git-split-diffs' npm package
   community.general.npm:
